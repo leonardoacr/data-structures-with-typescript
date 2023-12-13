@@ -1,3 +1,5 @@
+# Stack With Arrays
+
 Stack is a data collection that orders items in a Last In First Out (LIFO) structure, meaning that the first element to be removed is the last one that was added.
 
 To illustrate this concept, imagine a pile of books inside a bucket. You can only remove the top book when all the other books have been taken out.
@@ -5,7 +7,7 @@ To illustrate this concept, imagine a pile of books inside a bucket. You can onl
 Now, let's create an array to build a stack:
 
 ```tsx
-class Stack implements StackMethods {
+class Stack implements StackMethodsArray {
   items: number[];
 
   constructor() {
@@ -17,7 +19,7 @@ class Stack implements StackMethods {
 This class will have six methods to represent the stack:
 
 ```tsx
-interface StackMethods {
+interface StackMethodsArray {
   push(element: number): void;
   pop(): number | undefined;
   peek(): number;
