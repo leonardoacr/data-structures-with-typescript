@@ -57,4 +57,10 @@ describe('Queue', () => {
     queue.clear();
     expect(queue.size()).toBe(0);
   });
+
+  test('toString', () => {
+    queue.enqueue(firstElement);
+    queue.enqueue(secondElement);
+    expect(queue.toString()).toBe(`${firstElement},${secondElement}`);
+  });
 });

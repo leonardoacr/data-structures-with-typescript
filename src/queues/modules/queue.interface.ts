@@ -5,6 +5,7 @@ export interface QueueMethods {
   isEmpty(): boolean;
   size(): number;
   clear(): void;
+  toString(): string;
 }
 
 export type QueueItem = number | string | undefined;
