@@ -51,7 +51,7 @@ describe('Queue', () => {
     expect(queue.isEmpty()).toBe(false);
   });
 
-  test('size', () => {
+  test('Should get the size', () => {
     queue.enqueue(firstElement);
     expect(queue.size()).toBe(1);
     queue.clear();
