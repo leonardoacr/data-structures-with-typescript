@@ -8,23 +8,10 @@ describe('Stack', () => {
   });
 
   test('push and pop', () => {
-    // Initial state
-    console.log('Initial state:', stack);
-
-    // Pushing three elements
     stack.push(42);
-    console.log('After pushing 42:', stack);
     stack.push(431);
-    console.log('After pushing 431:', stack);
     stack.push(4);
-    console.log('After pushing 4:', stack);
-
-    // Popping and checking the result
     const poppedElement = stack.pop();
-    console.log('After popping:', stack);
-    console.log('Popped element:', poppedElement);
-
-    // Assertion
     expect(poppedElement).toBe(4);
   });
 
