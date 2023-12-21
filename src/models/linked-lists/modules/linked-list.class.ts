@@ -1,13 +1,18 @@
 import { defaultEquals } from '../../../utils/defaultEquals';
 import { LinkedListMethods } from './linked-list.interface';
 import { Node } from './../../../helpers/node.class';
+import { LinkedListUtils } from './linked-list.utils';
 
-export class LinkedList<T> implements LinkedListMethods<T> {
+export class LinkedList<T>
+  extends LinkedListUtils<T>
+  implements LinkedListMethods<T>
+{
   count: number;
   head: Node<T> | undefined;
   equalsFn: <T>(a: T, b: T) => boolean;
 
   constructor(equalsFn = defaultEquals) {
+    super();
     this.count = 0;
     this.head = undefined;
     this.equalsFn = equalsFn;
@@ -89,22 +94,53 @@ export class LinkedList<T> implements LinkedListMethods<T> {
     return current?.element;
   }
 
-  remove<T>(element: T): void {
-    throw new Error('Method not implemented.');
+  remove(element: T): void {
+    if (this.head?.element === element) {
+      this.removeAt(0);
+    } else {
+      const indexToRemove = this.indexOf(element);
+      this.removeAt(indexToRemove);
+    }
   }
 
   indexOf<T>(element: T): number {
-    throw new Error('Method not implemented.');
+    if (this.head?.element === element) {
+      return 0;
+    } else {
+      let node = this.head;
+      let counter = 0;
+      while (node?.element !== element) {
+        node = node?.next;
+        counter++;
+      }
+
+      return counter;
+    }
   }
 
   size(): number {
-    throw new Error('Method not implemented.');
-  }
-  toString(): string {
-    throw new Error('Method not implemented.');
+    let node = this.head;
+    if (!node) return 0;
+
+    let counter = 1;
+    while (node?.next !== undefined) {
+      node = node?.next;
+      counter++;
+    }
+
+    return counter;
   }
 
-  private isValidPosition(position: number): boolean {
-    return position >= 0 && position <= this.count;
+  toString(): string {
+    let node = this.head;
+    if (!node) return '';
+
+    let result = `${node.element}`;
+    while (node?.next !== undefined) {
+      node = node?.next;
+      result += `, ${node.element}`;
+    }
+
+    return result;
   }
 }
