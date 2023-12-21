@@ -1,4 +1,4 @@
-export class LinkedListUtils<T> {
+export class LinkedListUtils {
   protected count: number;
 
   constructor() {

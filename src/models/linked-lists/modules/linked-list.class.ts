@@ -4,7 +4,7 @@ import { Node } from './../../../helpers/node.class';
 import { LinkedListUtils } from './linked-list.utils';
 
 export class LinkedList<T>
-  extends LinkedListUtils<T>
+  extends LinkedListUtils
   implements LinkedListMethods<T>
 {
   count: number;
