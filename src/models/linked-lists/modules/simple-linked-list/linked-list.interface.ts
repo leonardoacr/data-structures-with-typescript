@@ -1,4 +1,4 @@
-import { Node } from './../../../helpers/node.class';
+import { Node } from '../../../../helpers/node.class';
 
 export interface LinkedListMethods<T> {
   push(element: T): void;

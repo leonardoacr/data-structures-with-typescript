@@ -20,9 +20,9 @@ describe('LinkedList', () => {
   });
 
   test('Should insert new element', () => {
+    linkedList.insert(thirdElement, 0);
     linkedList.push(firstElement);
     linkedList.push(secondElement);
-    linkedList.insert(thirdElement, 0);
     expect(linkedList.getElementAt(0)?.element).toBe(thirdElement);
   });
 
@@ -70,49 +70,4 @@ describe('LinkedList', () => {
       `${thirdElement}, ${firstElement}, ${secondElement}`
     );
   });
-
-  // test('Should dequeue element', () => {
-  //   queue.enqueue(firstElement);
-  //   queue.enqueue(secondElement);
-
-  //   const dequeuedElement = queue.dequeue();
-  //   expect(dequeuedElement).toBe(firstElement);
-  // });
-
-  // test('Should clear queue', () => {
-  //   queue.enqueue('First element');
-  //   queue.clear();
-
-  //   expect(queue.peek()).toBeUndefined();
-
-  //   queue.enqueue(firstElement);
-  //   queue.dequeue();
-
-  //   expect(queue.peek()).toBeUndefined();
-  // });
-
-  // test('Should peek', () => {
-  //   queue.enqueue(firstElement);
-  //   queue.enqueue(secondElement);
-  //   expect(queue.peek()).toBe(firstElement);
-  // });
-
-  // test('isEmpty', () => {
-  //   expect(queue.isEmpty()).toBe(true);
-  //   queue.enqueue(firstElement);
-  //   expect(queue.isEmpty()).toBe(false);
-  // });
-
-  // test('Should get the size', () => {
-  //   queue.enqueue(firstElement);
-  //   expect(queue.size()).toBe(1);
-  //   queue.clear();
-  //   expect(queue.size()).toBe(0);
-  // });
-
-  // test('toString', () => {
-  //   queue.enqueue(firstElement);
-  //   queue.enqueue(secondElement);
-  //   expect(queue.toString()).toBe(`${firstElement},${secondElement}`);
-  // });
 });

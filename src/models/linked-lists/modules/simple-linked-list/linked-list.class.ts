@@ -1,7 +1,7 @@
-import { defaultEquals } from '../../../utils/defaultEquals';
+import { defaultEquals } from '../../../../utils/defaultEquals';
 import { LinkedListMethods } from './linked-list.interface';
-import { Node } from './../../../helpers/node.class';
-import { LinkedListUtils } from './linked-list.utils';
+import { Node } from '../../../../helpers/node.class';
+import { LinkedListUtils } from '../utils/linked-list.utils';
 
 export class LinkedList<T>
   extends LinkedListUtils
@@ -119,16 +119,7 @@ export class LinkedList<T>
   }
 
   size(): number {
-    let node = this.head;
-    if (!node) return 0;
-
-    let counter = 1;
-    while (node?.next !== undefined) {
-      node = node?.next;
-      counter++;
-    }
-
-    return counter;
+    return this.count;
   }
 
   toString(): string {
