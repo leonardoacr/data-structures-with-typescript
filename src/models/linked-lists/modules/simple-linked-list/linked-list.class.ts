@@ -42,6 +42,7 @@ export class LinkedList<T>
     if (positionTarget === 0) {
       newNode.next = this.head;
       this.head = newNode;
+      this.count++;
     } else {
       let currentNode = this.head;
 
@@ -54,6 +55,7 @@ export class LinkedList<T>
       if (currentNode) {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
+        this.count++;
       }
     }
   }
