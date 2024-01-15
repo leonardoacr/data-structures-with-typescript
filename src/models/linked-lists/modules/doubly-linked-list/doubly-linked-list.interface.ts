@@ -1,4 +1,4 @@
-import { DoublyNode } from '../../../../helpers/doubly-node.class';
+import { DoublyNode } from './doubly-node.class';
 
 export interface DoublyLinkedListMethods<T> {
   push(element: T): void;

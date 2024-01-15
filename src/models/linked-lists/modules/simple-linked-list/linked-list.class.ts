@@ -1,6 +1,6 @@
 import { defaultEquals } from '../../../../utils/defaultEquals';
 import { LinkedListMethods } from './linked-list.interface';
-import { Node } from '../../../../helpers/node.class';
+import { Node } from './node.class';
 import { LinkedListUtils } from '../utils/linked-list.utils';
 
 export class LinkedList<T>

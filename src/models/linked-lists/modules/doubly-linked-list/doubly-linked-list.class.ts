@@ -1,4 +1,4 @@
-import { DoublyNode } from '../../../../helpers/doubly-node.class';
+import { DoublyNode } from './doubly-node.class';
 import { defaultEquals } from '../../../../utils/defaultEquals';
 import { LinkedListUtils } from '../utils/linked-list.utils';
 import { DoublyLinkedListMethods } from './doubly-linked-list.interface';
