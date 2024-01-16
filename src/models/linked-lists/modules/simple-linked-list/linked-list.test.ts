@@ -24,8 +24,11 @@ describe('LinkedList', () => {
   test('Should insert new element', () => {
     linkedList.insert(thirdElement, 0);
     linkedList.push(firstElement);
-    linkedList.push(secondElement);
+    linkedList.insert(secondElement, 2);
     expect(linkedList.getElementAt(0)?.element).toBe(thirdElement);
+    expect(linkedList.getElementAt(1)?.element).toBe(firstElement);
+    expect(linkedList.getElementAt(2)?.element).toBe(secondElement);
+    expect(linkedList.getElementAt(3)?.element).toBe(undefined);
   });
 
   test('Should remove element at given position', () => {
