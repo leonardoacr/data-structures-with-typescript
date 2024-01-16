@@ -61,21 +61,21 @@ export class LinkedList<T>
   }
 
   getElementAt(targetPosition: number): Node<T> | undefined {
-    if (!this.isValidPosition(targetPosition)) return;
+    if (!this.isValidPosition(targetPosition) || !this.head) return;
 
-    if (targetPosition === 0) {
-      return this.head;
-    } else {
-      let currentNode = this.head;
+    let currentPosition = 0;
+    let currentCircularNode: Node<T> | undefined = this.head;
 
-      let position = 0;
-      while (currentNode && position < targetPosition - 1) {
-        currentNode = currentNode.next;
-        position++;
+    do {
+      if (currentPosition === targetPosition) {
+        return currentCircularNode;
       }
 
-      return currentNode;
-    }
+      currentCircularNode = currentCircularNode?.next;
+      currentPosition++;
+    } while (currentCircularNode !== undefined);
+
+    return;
   }
 
   removeAt(targetPosition: number): T | undefined {
