@@ -16,9 +16,9 @@ describe('LinkedList', () => {
   test('Should push new element', () => {
     linkedList.push(firstElement);
     linkedList.push(secondElement);
-    expect(linkedList.getElementAt(1)?.element).toBe(firstElement);
-    expect(linkedList.getElementAt(2)?.element).toBe(secondElement);
-    expect(linkedList.getElementAt(3)?.element).toBe(undefined);
+    expect(linkedList.getElementAt(0)?.element).toBe(firstElement);
+    expect(linkedList.getElementAt(1)?.element).toBe(secondElement);
+    expect(linkedList.getElementAt(2)?.element).toBe(undefined);
   });
 
   test('Should insert new element', () => {
