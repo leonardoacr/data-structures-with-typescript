@@ -86,4 +86,34 @@ describe('BinarySearchTree', () => {
 
     expect(postOrderedTree).toEqual(referenceElements);
   });
+
+  test('Should return the min value', () => {
+    binarySearchTree.insert(firstElement);
+    binarySearchTree.insert(secondElement);
+    binarySearchTree.insert(thirdElement);
+    binarySearchTree.insert(fourthElement);
+    const referenceElements = [
+      firstElement,
+      secondElement,
+      thirdElement,
+      fourthElement
+    ];
+
+    expect(binarySearchTree.min()).toBe(Math.min(...referenceElements));
+  });
+
+  test('Should return the max value', () => {
+    binarySearchTree.insert(firstElement);
+    binarySearchTree.insert(secondElement);
+    binarySearchTree.insert(thirdElement);
+    binarySearchTree.insert(fourthElement);
+    const referenceElements = [
+      firstElement,
+      secondElement,
+      thirdElement,
+      fourthElement
+    ];
+
+    expect(binarySearchTree.max()).toBe(Math.max(...referenceElements));
+  });
 });

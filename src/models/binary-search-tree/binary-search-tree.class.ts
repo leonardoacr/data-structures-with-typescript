@@ -89,12 +89,26 @@ export default class BinarySearchTree<T> implements BinarySearchTreeMethods<T> {
     callback(node.key);
   }
 
-  min(): BinarySearchTreeNode<T> {
-    throw new Error('Method not implemented.');
+  min(): T | undefined {
+    if (this?.root) return this.minNode(this.root);
+    return;
   }
-  max(): BinarySearchTreeNode<T> {
-    throw new Error('Method not implemented.');
+
+  private minNode(node: BinarySearchTreeNode<T>): T {
+    if (node.left) return this.minNode(node.left);
+    return node.key;
   }
+
+  max(): T | undefined {
+    if (this?.root) return this.maxNode(this.root);
+    return;
+  }
+
+  private maxNode(node: BinarySearchTreeNode<T>): T {
+    if (node.right) return this.maxNode(node.right);
+    return node.key;
+  }
+
   removeKey(key: T): void {
     throw new Error('Method not implemented.');
   }
