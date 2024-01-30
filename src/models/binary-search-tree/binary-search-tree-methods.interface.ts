@@ -6,5 +6,5 @@ export interface BinarySearchTreeMethods<T> {
   postOrderTraverse(callback: (value: T) => void): void;
   min(): T | undefined;
   max(): T | undefined;
-  removeKey(key: T): void;
+  remove(key: T): void;
 }

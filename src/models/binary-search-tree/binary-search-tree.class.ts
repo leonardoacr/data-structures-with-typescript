@@ -11,9 +11,6 @@ export default class BinarySearchTree<T> implements BinarySearchTreeMethods<T> {
     this.compareFn = compareFn;
     this.root = null;
   }
-  removeKey(key: T): void {
-    throw new Error('Method not implemented.');
-  }
 
   insert(key: T): void {
     if (this.root == null) {
