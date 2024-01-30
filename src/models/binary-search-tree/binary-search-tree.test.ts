@@ -193,7 +193,7 @@ describe('BinarySearchTree', () => {
     );
     expect(orderedTree).toEqual(orderedReference);
 
-    // Remove an element without children (third element)
+    // Remove an element without children (fifth element)
     const elementToRemove = fifthElement;
     binarySearchTree.remove(elementToRemove);
 
@@ -231,7 +231,7 @@ describe('BinarySearchTree', () => {
     );
     expect(orderedTree).toEqual(orderedReference);
 
-    // Remove an element without children (third element)
+    // Remove an element without children (fourth element)
     const elementToRemove = fourthElement;
     binarySearchTree.remove(elementToRemove);
 
