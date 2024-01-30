@@ -11,6 +11,9 @@ export default class BinarySearchTree<T> implements BinarySearchTreeMethods<T> {
     this.compareFn = compareFn;
     this.root = null;
   }
+  removeKey(key: T): void {
+    throw new Error('Method not implemented.');
+  }
 
   insert(key: T): void {
     if (this.root == null) {
@@ -90,13 +93,13 @@ export default class BinarySearchTree<T> implements BinarySearchTreeMethods<T> {
   }
 
   min(): T | undefined {
-    if (this?.root) return this.minNode(this.root);
+    if (this?.root) return this.minNode(this.root)?.key;
     return;
   }
 
-  private minNode(node: BinarySearchTreeNode<T>): T {
+  private minNode(node: BinarySearchTreeNode<T>): BinarySearchTreeNode<T> {
     if (node.left) return this.minNode(node.left);
-    return node.key;
+    return node;
   }
 
   max(): T | undefined {
@@ -109,7 +112,29 @@ export default class BinarySearchTree<T> implements BinarySearchTreeMethods<T> {
     return node.key;
   }
 
-  removeKey(key: T): void {
-    throw new Error('Method not implemented.');
+  remove(key: T) {
+    this.root = this.removeNode(this.root, key);
+  }
+
+  private removeNode(
+    node: BinarySearchTreeNode<T> | null,
+    key: T
+  ): BinarySearchTreeNode<T> | null {
+    if (!node) return null;
+    if (this.compareFn(key, node?.key) === Compare.LESS_THAN) {
+      node.left = this.removeNode(node?.left, key);
+      return node;
+    } else if (this.compareFn(key, node.key) === Compare.GREATER_THAN) {
+      node.right = this.removeNode(node?.right, key);
+      return node;
+    } else {
+      if (!node.left && !node.right) return null;
+      if (!node.left && node.right) return node.right;
+      if (node.left && !node.right) return node.left;
+      const minNode = this.minNode(node.right as BinarySearchTreeNode<T>);
+      node.key = minNode.key;
+      node.right = this.removeNode(node.right, minNode.key);
+      return node;
+    }
   }
 }

@@ -1,7 +1,7 @@
 export class BinarySearchTreeNode<T> {
   key: T;
-  left: BinarySearchTreeNode<T> | undefined;
-  right: BinarySearchTreeNode<T> | undefined;
+  left: BinarySearchTreeNode<T> | null;
+  right: BinarySearchTreeNode<T> | null;
 
   constructor(
     key: T,
@@ -9,7 +9,7 @@ export class BinarySearchTreeNode<T> {
     next?: BinarySearchTreeNode<T>
   ) {
     this.key = key;
-    this.left = prev || undefined;
-    this.right = next || undefined;
+    this.left = prev || null;
+    this.right = next || null;
   }
 }
