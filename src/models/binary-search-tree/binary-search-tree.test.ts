@@ -22,8 +22,6 @@ describe('BinarySearchTree', () => {
     return { orderedTree, orderedReference };
   };
 
-  // beforeEach(() => {});
-
   test('Should insert new element', () => {
     const binarySearchTree = new BinarySearchTree();
     binarySearchTree.insert(firstElement);
@@ -134,7 +132,6 @@ describe('BinarySearchTree', () => {
   });
 
   test('Should remove an element without children', () => {
-    // Create a Binary Search Tree and insert elements
     const binarySearchTree = new BinarySearchTree<number>();
     const elementsToAdd = [
       firstElement,
@@ -145,7 +142,6 @@ describe('BinarySearchTree', () => {
     ];
     elementsToAdd.forEach((element) => binarySearchTree.insert(element));
 
-    // Create an ordered reference array to compare with the tree
     const allReferenceElements = [...elementsToAdd];
     const { orderedTree, orderedReference } = getOrderedTreeAndOrderedReference(
       binarySearchTree,
@@ -153,11 +149,9 @@ describe('BinarySearchTree', () => {
     );
     expect(orderedTree).toEqual(orderedReference);
 
-    // Remove an element without children (third element)
     const elementToRemove = thirdElement;
     binarySearchTree.remove(elementToRemove);
 
-    // Create an updated ordered reference array after removal
     const allReferenceElementsWithElementRemoved = elementsToAdd.filter(
       (element) => element !== elementToRemove
     );
@@ -173,7 +167,6 @@ describe('BinarySearchTree', () => {
   });
 
   test('Should remove an element without right children', () => {
-    // Create a Binary Search Tree and insert elements
     const binarySearchTree = new BinarySearchTree<number>();
     const elementsToAdd = [
       firstElement,
@@ -185,7 +178,6 @@ describe('BinarySearchTree', () => {
     ];
     elementsToAdd.forEach((element) => binarySearchTree.insert(element));
 
-    // Create an ordered reference array to compare with the tree
     const allReferenceElements = [...elementsToAdd];
     const { orderedTree, orderedReference } = getOrderedTreeAndOrderedReference(
       binarySearchTree,
@@ -193,11 +185,9 @@ describe('BinarySearchTree', () => {
     );
     expect(orderedTree).toEqual(orderedReference);
 
-    // Remove an element without children (fifth element)
     const elementToRemove = fifthElement;
     binarySearchTree.remove(elementToRemove);
 
-    // Create an updated ordered reference array after removal
     const allReferenceElementsWithElementRemoved = elementsToAdd.filter(
       (element) => element !== elementToRemove
     );
@@ -213,7 +203,6 @@ describe('BinarySearchTree', () => {
   });
 
   test('Should remove an element with two childrens', () => {
-    // Create a Binary Search Tree and insert elements
     const binarySearchTree = new BinarySearchTree<number>();
     const elementsToAdd = [
       firstElement,
@@ -223,7 +212,6 @@ describe('BinarySearchTree', () => {
     ];
     elementsToAdd.forEach((element) => binarySearchTree.insert(element));
 
-    // Create an ordered reference array to compare with the tree
     const allReferenceElements = [...elementsToAdd];
     const { orderedTree, orderedReference } = getOrderedTreeAndOrderedReference(
       binarySearchTree,
@@ -231,11 +219,9 @@ describe('BinarySearchTree', () => {
     );
     expect(orderedTree).toEqual(orderedReference);
 
-    // Remove an element without children (fourth element)
     const elementToRemove = fourthElement;
     binarySearchTree.remove(elementToRemove);
 
-    // Create an updated ordered reference array after removal
     const allReferenceElementsWithElementRemoved = elementsToAdd.filter(
       (element) => element !== elementToRemove
     );
